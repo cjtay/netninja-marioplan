@@ -10,7 +10,7 @@ class CreateProject extends Component {
 
     submitHandler = (e) => {
         e.preventDefault();
-        this.props.createProject(this.state);
+        this.props.makeProject(this.state);
     };
 
     onChangeHandler = (e) => {
@@ -54,7 +54,10 @@ class CreateProject extends Component {
 
 const mapDispatchtoProps = (dispatch) => {
     return {
-        createProject: (project) => dispatch(createProject(project)),
+        makeProject: (project) => dispatch(createProject(project)),
+        // same as...
+        // makeProject: (project) =>
+        //     dispatch({ type: 'CREATE_PROJECT', project: project }),
     };
 };
 
